@@ -20,10 +20,10 @@ accedera al examen correspondiente dibujando las preguntas y las posibles
 respuestas.
 
 Arquitectura requerida
-Backend: Nodejs y Express.
-Frontend: HTML y Jquery (Se deben consumir los SW del backend a través de Jquery)
-SW: ApiRestFull (Cualquier funcionalidad deberá ser accedida a través de un SW rest)
-Base de datos: Mysql
+- Backend: Nodejs y Express.
+- Frontend: HTML y Jquery (Se deben consumir los SW del backend a través de Jquery)
+- SW: ApiRestFull (Cualquier funcionalidad deberá ser accedida a través de un SW rest)
+- Base de datos: Mysql
 
 CONSIDERACIONES
 - No se requiere que el examen generado sea respondido, únicamente se mostrará al
