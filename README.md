@@ -1,10 +1,11 @@
 # PruebaDesarrolloCODE_LigiaAbril
 
-El Profesor
+# El Profesor
 Un Profesor requiere un sistema que le permite crear exámenes de selección múltiple, es
 decir el sistema web deberá darle la posibilidad de crear un pequeño examen y
 posteriormente generar un Link para que este pueda ser enviado a una persona
 posteriormente.
+
 Especificaciones:
 - El examen a crear consta de una sola serie de preguntas con un máximo de 5
 preguntas.
@@ -20,11 +21,13 @@ El alumno.
 - Se espera que el alumno tenga acceso al URL, el cual al entrar a la URL enviada se
 accedera al examen correspondiente dibujando las preguntas y las posibles
 respuestas.
+
 Arquitectura requerida
 Backend: Nodejs y Express.
 Frontend: HTML y Jquery (Se deben consumir los SW del backend a través de Jquery)
 SW: ApiRestFull (Cualquier funcionalidad deberá ser accedida a través de un SW rest)
 Base de datos: Mysql
+
 CONSIDERACIONES
 - No se requiere que el examen generado sea respondido, únicamente se mostrará al
 entrar a la URL determinada.
