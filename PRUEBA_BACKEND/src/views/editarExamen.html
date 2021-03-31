@@ -1,0 +1,28 @@
+<%- include('layout.html'); %>
+
+<table>
+  <% for (var i =1; i <=num; i++ ) { %>
+
+  <tr>
+    <td>PREGUNTA <%= i %> :</td>
+    <td colspan="3">
+      <input type="text" name="pregunta<%= i %>" id="pregunta<%= i %>" />
+    </td>
+  </tr>
+  <% for (var j =1; j <=3; j++ ) { %>
+  <tr>
+    <td></td>
+    <td>Respuesta <%= j %>:</td>
+    <td>
+      <input type="tel" name="resp<%= j %><%= i %>" id="resp<%= j %><%= i %>" />
+    </td>
+    <td>
+      <input type="checkbox" name="correcta" id="correcta" checked />
+      correcta
+    </td>
+  </tr>
+
+  <% } %> <% } %>
+  <tr></tr>
+  <tr><td colspan="5" style="text-align: center;"><input type="submit" value="submit"></td></tr>
+</table>

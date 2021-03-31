@@ -1,0 +1,60 @@
+body, table {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  width: calc(100% - 10px);
+  height: 100%;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#nombreExamen {
+  width: 80%;
+}
+
+.datos{
+  background-color: #c1c1c1;
+  width: 100%;
+}
+
+.detalleTitulo {
+  text-align: center;
+}
+
+.noPreguntas {
+  border: 1px solid black;
+}
+
+.detalleSubTitulo {
+  font-size: 17px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.detalleExamen{
+  display: none;
+  font-size: 25px;
+  width: 50%;
+  text-align: left;
+}
+
+.generarExamen{
+  font-size: 20px;
+  width: 50%;
+  text-align: center;
+}
+
+.titulo {
+  margin: 0;
+  font-weight: 600;
+  background-color: #e1e1e1;
+  color: #000000;
+  font-size: 60px;
+}
+
+h1 {
+  text-align: center;;
+}
+
+a {
+  color: #00B7FF;
+}
