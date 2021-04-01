@@ -1,16 +1,16 @@
 <%- include('layout.html'); %>
 
   <body>
-    <table width='100%'>
+    <table class="detalle" width='100%'>
       <tr class='generarExamen'>
-        <td>
-          <button onclick="$('#detalleExamen').show();">
+        <td id='generaBoton'>
+          <button class="generarExamen" onclick="$('#detalleExamen').show(); $('#generaBoton').hide()">
             GRENERA EXAMEN
           </button>
         </td>
 
         <td id="detalleExamen" class="detalleExamen">
-          <table>
+          <table class="detalle">
             <form action="/sendDetail">
               <tr>
                 <th colspan="2" class="detalleTitulo">DETALLE DE EXAMEN</th>
@@ -34,7 +34,7 @@
               </tr>
               <tr>
                 <td colspan="2">
-                  <input type="submit" value="submit">
+                  <input type="submit" value="ENVIAR">
                 </td>
               </tr>
             </form>

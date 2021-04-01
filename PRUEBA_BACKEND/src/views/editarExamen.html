@@ -1,28 +1,45 @@
 <%- include('layout.html'); %>
 
-<table>
-  <% for (var i =1; i <=num; i++ ) { %>
+<form action="/guardarPreguntas">
+  <input type="hidden" name="num" value="<%= num %>">
+  <input type="hidden" name="nombre" value="<%= nombre %>">
+  <input type="hidden" name="id" value="<%= id %>">
+  <table>
+    <% for (var i =1; i <=num; i++ ) { %>
 
-  <tr>
-    <td>PREGUNTA <%= i %> :</td>
-    <td colspan="3">
-      <input type="text" name="pregunta<%= i %>" id="pregunta<%= i %>" />
-    </td>
-  </tr>
-  <% for (var j =1; j <=3; j++ ) { %>
-  <tr>
-    <td></td>
-    <td>Respuesta <%= j %>:</td>
-    <td>
-      <input type="tel" name="resp<%= j %><%= i %>" id="resp<%= j %><%= i %>" />
-    </td>
-    <td>
-      <input type="checkbox" name="correcta" id="correcta" checked />
-      correcta
-    </td>
-  </tr>
+    <tr style="background-color: whitesmoke;">
+      <td>PREGUNTA <%= i %> :</td>
+      <td colspan="3">
+        <input type="text" name="pregunta<%= i %>" id="pregunta<%= i %>" required/>
+      </td>
+    </tr>
+    <% for (var j =1; j <=3; j++ ) { %>
+    <tr style="background-color: #dae2fe;">
+      <td></td>
+      <td>Respuesta <%= j %>:</td>
+      <td style="width: 30%; text-align: left !important">
+        <input
+          type="tel"
+          name="resp<%= j %><%= i %>"
+          id="resp<%= j %><%= i %>"
+          style="width: calc(100% - 25px)" 
+          required
+        />
+      </td>
+      <td style="text-align: left !important">
+        <input type="checkbox" name="correcta<%= j %><%= i %>" id="correcta<%= j %><%= i %>" <% if (j == 1) { %>
+          checked
+        <% } %> />
+        correcta
+      </td>
+    </tr>
 
-  <% } %> <% } %>
-  <tr></tr>
-  <tr><td colspan="5" style="text-align: center;"><input type="submit" value="submit"></td></tr>
-</table>
+    <% } %> <% } %>
+    <tr></tr>
+    <tr>
+      <td colspan="5" style="text-align: center">
+        <input type="submit" value="submit" />
+      </td>
+    </tr>
+  </table>
+</form>

@@ -2,9 +2,46 @@ body, table {
   background-color: #ffffff;
   color: rgb(0, 0, 0);
   font-size: 20px;
-  width: calc(100% - 10px);
+  width: calc(100% - 15px);
   height: 100%;
-  font-family: 'Courier New', Courier, monospace;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+table {
+  margin-top: 20px;
+}
+
+input, button{
+  font-size: 17px;
+  font-style: normal;
+  font-family:'Courier New', Courier, monospace;
+  font-weight: bold;
+  margin: 15px;
+  border-radius: 10px;
+}
+
+input[type=submit] {
+  background-color: #9acacd;
+  width: 100%; 
+}
+input[type=submit]:hover {
+  background-color: #7cafb3;
+}
+
+input[type=text] {
+  background-color: transparent;
+}
+
+input[type=text]:focus {
+  background-color: white;
+}
+
+table tr td{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.detalle {
+  background-color: #c7ddde;
 }
 
 #nombreExamen {
@@ -17,17 +54,23 @@ body, table {
 }
 
 .detalleTitulo {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
 }
 
 .noPreguntas {
   border: 1px solid black;
+  padding: 10px;
+  margin: 20px;
 }
 
 .detalleSubTitulo {
+  font-family:'Courier New', Courier, monospace;
   font-size: 17px;
   text-align: center;
   padding-bottom: 20px;
+  padding: 10px;
+  margin: 20px;
 }
 
 .detalleExamen{
@@ -35,12 +78,16 @@ body, table {
   font-size: 25px;
   width: 50%;
   text-align: left;
+  padding: 10px;
+  margin: 20px;
 }
 
 .generarExamen{
   font-size: 20px;
   width: 50%;
   text-align: center;
+  padding: 10px;
+  margin: 20px;
 }
 
 .titulo {

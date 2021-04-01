@@ -20,16 +20,18 @@ module.exports.insertar = function (str) {
   });
 };
 
-module.exports.select = function (str, callback) {
+module.exports.select = function (str, cb) {
   con.query(str, (err, res, fields) => {
+    var array, i =0;
     console.log("Buscando registro...");
-    if (err) throw err;
-    /*    Object.keys(res).forEach(function(key) {
+    // done: call callback with results
+    cb(err, res);
+    /* if (err) throw err;
+     Object.keys(res).forEach(function(key) {
       var row = res[key];
-      console.log(row.max)
-    });*/
-    console.log(res[0].max)
-    return res[0].max;
+    });
+    console.log(res)
+    console.log(array)*/
     
     // callback(null, res[0].max)
   });
