@@ -1,9 +1,9 @@
 # PruebaDesarrolloCODE_LigiaAbril
 
-  ## FRONT-END
+# FRONT-END
 
-  ## BACK-END
-# El Profesor
+# BACK-END
+## El Profesor
 Un Profesor requiere un sistema que le permite crear exámenes de selección múltiple, es decir el sistema web deberá darle la posibilidad de crear un pequeño examen y posteriormente generar un Link para que este pueda ser enviado a una persona posteriormente.
 
 Especificaciones:
