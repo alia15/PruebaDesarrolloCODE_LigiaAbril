@@ -20,12 +20,24 @@ module.exports.insertar = function (str) {
   });
 };
 
-module.exports.select = function (str, cb) {
-  con.query(str, (err, res, fields) => {
+module.exports.select = function (id) {
+  
+  return new Promise(function(cb, err) { 
+    var qri =
+    "SELECT e.examen examen, e.nombre nombre, e.num_preguntas num, p.pregunta numP, p.texto pregunta, r.respuesta numR, r.texto respuesta, r.correcta cor " +
+    "  FROM examenes e " +
+    " INNER JOIN preguntas p ON e.examen = p.examen " +
+    " INNER JOIN respuestas r ON r.examen = e.examen " +
+    ` WHERE e.examen = '${id}' ` +
+    " AND p.pregunta = r.pregunta " +
+    " ORDER BY numP, pregunta, numR;";
+    console.log(qri)
+  con.query(qri, (err, res, fields) => {
     var array, i =0;
     console.log("Buscando registro...");
+    if (err) throw err;
     // done: call callback with results
-    cb(err, res);
+    cb(res);
     /* if (err) throw err;
      Object.keys(res).forEach(function(key) {
       var row = res[key];
@@ -35,4 +47,5 @@ module.exports.select = function (str, cb) {
     
     // callback(null, res[0].max)
   });
+});
 };

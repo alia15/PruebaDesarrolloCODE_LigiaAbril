@@ -15,39 +15,35 @@ router.get("/examen", function (req, res, next) {
 });
 
 router.get("/examen/:id", function (req, res, next) {
-  res.render("muestraExamen.html", {
-    title: "EXAMEN " + req.params.id,
-    cuerpo: "",
+  var id = req.params.id
+  
+  conn.select(id).then(function(data) {
+    console.log(data);
+    res.render("muestraExamen.html", { 
+      title: data[0].nombre, 
+      data: data,
+    });      
+    console.log(data);
   });
 });
 
 /* GET users listing. */
 router.get("/mostrarGenerado/examen/:id", function (req, res, next) {
-  var qri =
-    "SELECT e.examen examen, e.nombre nombre, p.pregunta numP, p.texto pregunta, r.respuesta numR, r.texto respuesta, r.correcta cor " +
-    "  FROM examenes e " +
-    " INNER JOIN preguntas p ON e.examen = p.examen " +
-    " INNER JOIN respuestas r ON r.examen = e.examen " +
-    ` WHERE e.examen = '${req.params.id}' ` +
-    " AND p.pregunta = r.pregunta " +
-    " ORDER BY numP, pregunta, numR;";
 
-  console.log(qri);
+  var id = req.params.id
   
-  var respuesta;
-  conn.select(qri, (err, resp) => {
-    if (err) throw(err);
-    respuesta = resp;
-    console.log(respuesta)
-    //res.send(resp)
-  
-  res.render("generaExamen.html", {
-    title: req.params.id,
-    url: req.get("host"),
-    id: "/examen/" + req.params.id,
+  conn.select(id).then(function(data) {
+    console.log(data);
+    res.render("generaExamen.html", { 
+      title: data[0].nombre,
+      url: req.get("host"),
+      id: "/examen/" + req.params.id,
+      data: data,
+      nombre: data[0].nombre
+    });      
+    console.log(data);
   });
-  })
-  console.log(respuesta)
+
 
 });
 
@@ -165,8 +161,8 @@ router.get("/guardarPreguntas", function (req, res, next) {
     console.log(insert);
     correcto = 0;
   }
-  insert +=
-    `'1') ON DUPLICATE KEY UPDATE ` +
+  if (!impreso) insert +=
+    `'0') ON DUPLICATE KEY UPDATE ` +
     `pregunta='${pregunta}', examen='${id}', respuesta='${respuesta}', texto='${texto}', correcta='0'; `;
   conn.insertar(insert);
   res.redirect(`/mostrarGenerado/examen/${id}`);

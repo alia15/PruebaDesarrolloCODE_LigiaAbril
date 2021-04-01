@@ -1,4 +1,22 @@
 
 <div class="examen">
-  <%= res %> 
+    <% for( let i = 0; i < data.length; i++ ) { %>
+        <% if (i % 3 == 0) { %>
+        </tr>
+          <tr style="background-color: #dce4bd;">
+            <td colspan="7" style=" border-radius: 50px; margin: 10px;">
+          <%= data[i].numP + " ) " + data[i].pregunta %> 
+          </td>
+        </tr>
+        <tr>
+          <td>
+          </td>
+        <% } %>
+        </td>
+        <td style="background-color: #aea5a5; border-radius: 100px;">
+          <input type="radio" name="respP<%= data[i].numP %>" id="respP<%= data[i].numP %><%= data[i].numR %>" value="<%= data[i].respuesta %>">
+          <label style="width: 100%;" for="respP<%= data[i].numP %><%= data[i].numR %>" ><%= data[i].respuesta %></label>
+        </td>
+    <% } %>
+  </table>
 </div>
